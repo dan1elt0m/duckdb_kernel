@@ -1,10 +1,12 @@
 services:
   uc:
-    image: godatadriven/unity-catalog:0.2.1
+    build:
+      dockerfile: Dockerfile.uc
     ports:
       - 8080:8080
+      - 33865:33865
     volumes:
-      - shared-data:/app/unitycatalog
+      - shared-data:/app/unitycatalog/
   jupyter:
     user: root
     build:
