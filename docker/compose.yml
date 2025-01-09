@@ -1,6 +1,6 @@
 services:
   uc:
-    image: godatadriven/unity-catalog
+    image: godatadriven/unity-catalog:0.2.1
     ports:
       - 8080:8080
     volumes:
@@ -18,6 +18,8 @@ services:
       CHOWN_HOME: 'yes'
       CHOWN_HOME_OPTS: -R
       UC_ENDPOINT: 'http://uc:8080'
+      JY_HOST_URL: 'http://localhost:8081/'
+      JY_DOCKER_HOST: 'http://uc:8080'
     ports:
       - 8888:8888
     depends_on:
